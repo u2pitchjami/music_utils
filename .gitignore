@@ -1,0 +1,11 @@
+.env
+.envrc
+
+beet_batch_output.txt
+beet_works.txt
+beets_manuel.txt
+*/__pycache*
+/logs/*.log
+/recap/*.txt
+/sav_base/
+/reports/
