@@ -46,15 +46,15 @@ def run_beets_batch_command(
             if dry_run:
                 logger.info(f"[SIMULATION] beet {beet_command} {' '.join(args)}")
             else:
-                run_beet_command(command=beet_command, args=args, capture_output=True, dry_run=dry_run, logname="Beets_batch")
-
+                output = run_beet_command(command=beet_command, args=args, capture_output=True, dry_run=dry_run, logname="Beets_batch")
+                logger.info(f"output {output}")
     except Exception as e:
         logger.error(f"Erreur durant le traitement beet en masse : {e}")
 
 if __name__ == "__main__":
     run_beets_batch_command(
         source_file="beet_works.txt",
-        beet_command="bad",
+        beet_command="xtractor",
         args_template=["{path}"],
         extraction_mode="path_extract",
         dry_run=False
